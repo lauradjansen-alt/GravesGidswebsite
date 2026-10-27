@@ -10,86 +10,79 @@
 @font-face{font-family:"Fraunces";src:url(fonts/fraunces-latin-500-statisch.ttf) format("truetype");font-weight:500;font-display:swap}
 @font-face{font-family:"Atkinson";src:url(fonts/atkinson-hyperlegible-next-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Atkinson";src:url(fonts/atkinson-hyperlegible-next-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
-:root{--zand:#F8F2E9;--inkt:#2B3A55;--zacht:#56647C;--merk:#1C5AA2;--blauw:#1268B8;--teal:#0A93A2;--tealtekst:#08707C}
+:root{--zand:#F8F2E9;--inkt:#2B3A55;--zacht:#56647C;--merk:#1C5AA2;--blauw:#1268B8;--teal:#0A93A2}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
-body{background:var(--zand);color:var(--inkt);font:400 18px/1.55 "Atkinson",system-ui,sans-serif;-webkit-text-size-adjust:100%;
+body{background:var(--zand);color:var(--inkt);font:400 clamp(17px,1.45vw,21px)/1.6 "Atkinson",system-ui,sans-serif;-webkit-text-size-adjust:100%;
   min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
 a{color:var(--merk)}
-h1,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;color:var(--merk);line-height:1.15;margin:0}
-/* bovenbalk */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,4vw,56px);position:relative;z-index:2}
-.nav .logo{height:44px}
-.nav .rechts{display:flex;align-items:center;gap:clamp(10px,2vw,26px);font-weight:600;font-size:16px}
-.nav .rechts a{text-decoration:none;color:var(--inkt);display:flex;align-items:center;gap:7px}
-.nav .rechts a:hover{color:var(--merk)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,4vw,56px)}
+.nav .logo{height:42px;display:block}
+.nav .rechts{display:flex;align-items:center;gap:20px;font-weight:600;font-size:16px}
+.nav .rechts a{color:var(--inkt);text-decoration:none;display:flex}
+.nav .rechts a.contact{color:var(--merk)}
 .nav svg{width:20px;height:20px}
-.nav .rechts a.knop{background:var(--merk);color:#fff;padding:10px 20px;border-radius:30px}
-.nav .rechts a.knop:hover{background:#174C8A;color:#fff}
-/* held */
-.held{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  padding:2vh 24px 3vh;background:url(achtergrond.jpg) center/cover no-repeat}
-.label{display:inline-block;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--tealtekst);
-  background:rgba(255,255,255,.75);border-radius:20px;padding:6px 16px;margin-bottom:clamp(12px,2.4vh,22px)}
-.held h1{font-size:clamp(34px,min(6vw,7vh),66px)}
-.lijn{display:block;width:64px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--blauw),var(--teal));margin:clamp(14px,2.6vh,24px) auto}
-.held p{max-width:600px;margin:0 0 clamp(18px,3vh,30px);font-size:clamp(17px,2.4vh,20px);text-wrap:balance}
-.knoppen{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.k1{font-weight:600;background:var(--merk);color:#fff;border-radius:32px;padding:13px 26px;text-decoration:none}
-.k1:hover{background:#174C8A}
-.k2{font-weight:600;color:var(--merk);border-radius:32px;padding:11px 24px;text-decoration:none;border:2px solid var(--merk);background:rgba(255,255,255,.6)}
-.held p.riet{margin:clamp(14px,2.6vh,26px) 0 0;font-size:16px;color:var(--zacht);max-width:560px}
-.riet a{font-weight:600}
-.riet .kort{display:none}
-@media (max-width:760px){.riet .lang{display:none}.riet .kort{display:inline}.held{padding-top:1vh;padding-bottom:1vh}.held p{margin-bottom:16px}.lijn{margin:12px auto}}
-/* thema's */
-.thema{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,48px);padding:clamp(16px,3vh,30px) clamp(20px,6vw,96px);position:relative}
-.th .streep{display:block;width:36px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--blauw),var(--teal));margin-bottom:10px}
-.th .lab{font-family:"Fraunces";color:var(--tealtekst);font-size:16px;letter-spacing:.03em}
-.th h3{font-size:clamp(19px,1.6vw,23px);margin-top:2px}
-.ei{position:absolute;right:clamp(20px,5vw,80px);top:-34px;width:58px;transform:rotate(12deg)}
-footer{padding:12px clamp(20px,4vw,56px);font-size:14px;color:var(--zacht);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;border-top:1px solid #EADFCF}
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:40px clamp(24px,6vw,96px);background:url(achtergrond.jpg) center/cover no-repeat}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:500;color:var(--merk);line-height:1.12;margin:0;
+  font-size:clamp(34px,min(5.6vw,8vh),76px)}
+.lijn{display:block;width:64px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--blauw),var(--teal));margin:clamp(22px,4vh,40px) auto}
+main p{margin:0;max-width:44em}
+main p + p{margin-top:12px}
+.volg{margin-top:clamp(32px,6vh,60px);font-size:.9em}
+.knoppen{display:flex;justify-content:center;gap:18px;margin-top:14px}
+/* computer: knoppen met kleurverloop (B) */
+.knoppen a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:16px;color:#fff;
+  padding:11px 24px;border-radius:30px;background:linear-gradient(100deg,var(--blauw),var(--teal));box-shadow:0 3px 12px rgba(10,147,162,.22);transition:transform .15s,box-shadow .15s}
+.knoppen a:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(10,147,162,.32)}
+.knoppen svg{width:19px;height:19px}
+footer{padding:14px clamp(20px,4vw,56px);font-size:14px;color:var(--zacht);display:flex;justify-content:center;flex-wrap:wrap;gap:4px 18px;text-align:center}
 footer a{font-weight:600}
 @media (max-width:760px){
-  .nav .tekst{display:none}
-  .nav .logo{height:36px}
-  .thema{display:none}
-  footer{justify-content:center;text-align:center}
-  footer .c{display:none}
+  body{font-size:17px}
+  h1{text-wrap:balance}
+  main p{text-wrap:balance}
+  .nav{padding:14px 20px}
+  .nav .logo{height:34px}
+  .nav .rechts{gap:16px}
+  .lijn{margin:22px auto}
+  .volg{margin-top:36px}
 }
-@media (max-height:640px) and (max-width:760px){.held p.riet{font-size:14px;margin-top:8px}.label{display:none}.held p{font-size:16px}.label{margin-bottom:8px}.nav{padding-top:12px;padding-bottom:12px}}
+@media (max-height:640px){.lijn{margin:18px auto}.volg{margin-top:28px}main{padding:24px 24px}}
+/* telefoon: ronde icoontjes (C) */
+@media (max-width:760px){
+  .knoppen{gap:34px}
+  .knoppen a{flex-direction:column;gap:8px;font-size:15px;color:var(--merk);padding:0;background:none;box-shadow:none}
+  .knoppen a:hover{transform:none;box-shadow:none}
+  .knoppen svg{width:24px;height:24px;box-sizing:content-box;padding:16px;border-radius:50%;color:#fff;background:linear-gradient(135deg,var(--blauw),var(--teal));box-shadow:0 3px 12px rgba(10,147,162,.25)}
+}
 </style>
 </head>
 <body>
 <header class="nav">
   <img class="logo" src="logo.png" alt="GravesGids">
   <nav class="rechts">
-    <a href="https://www.instagram.com/gravesgids/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span class="tekst">Instagram</span></a>
-    <a href="https://www.facebook.com/GravesGids" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H16l.5-4h-3V8.8c0-.5.3-.8.5-.8z"/></svg><span class="tekst">Facebook</span></a>
-    <a class="knop" href="mailto:gravesgids@gmail.com">Contact</a>
+    <a href="https://www.instagram.com/gravesgids/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.facebook.com/GravesGids" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H16l.5-4h-3V8.8c0-.5.3-.8.5-.8z"/></svg></a>
+    <a class="contact" href="mailto:gravesgids@gmail.com">Contact</a>
   </nav>
 </header>
 
-<main class="held">
-  <span class="label">Binnenkort</span>
+<main>
   <h1>Goed op weg met Graves</h1>
   <span class="lijn"></span>
-  <p>Informatie, steun en houvast voor mensen met de ziekte van Graves. Binnenkort vind je hier meer over GravesGids en onze webshop. Volg ons, dan blijf je op de hoogte.</p>
+  <p>Informatie, steun en houvast voor mensen met de ziekte van Graves.</p>
+  <p>Binnenkort vind je hier de gids, praktische handvatten en de weg naar lotgenoten.</p>
+  <div class="volg">Volg ons alvast:</div>
   <div class="knoppen">
-    <a class="k1" href="https://www.instagram.com/gravesgids/">Volg ons op Instagram</a>
-    <a class="k2" href="https://www.facebook.com/GravesGids">Volg ons op Facebook</a>
+    <a href="https://www.instagram.com/gravesgids/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+    <a href="https://www.facebook.com/GravesGids"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H16l.5-4h-3V8.8c0-.5.3-.8.5-.8z"/></svg><span>Facebook</span></a>
   </div>
-  <p class="riet"><span class="lang">Verdiepende informatie over de ziekte, behandelingen en nieuws vind je nu al op: </span><span class="kort">Meer over Graves: </span><a href="https://www.ziektevangraves-basedow.nl">ziektevangraves-basedow.nl</a></p>
 </main>
 
-<section class="thema">
-  <img class="ei" src="vlinder.png" alt="">
-  <div class="th"><span class="streep"></span><div class="lab">de gids</div><h3>Vind je weg</h3></div><div class="th"><span class="streep"></span><div class="lab">leven met Graves</div><h3>Tips en handvatten</h3></div><div class="th"><span class="streep"></span><div class="lab">ontwikkelingen</div><h3>Wat er verandert</h3></div><div class="th"><span class="streep"></span><div class="lab">steun &amp; contact</div><h3>Je staat er niet alleen voor</h3></div>
-</section>
-
 <footer>
-  <span class="c">© GravesGids</span>
-  <span>Lotgenoten: <a href="https://www.facebook.com/groups/graveslotgenoten/">onze Facebookgroep</a> · <a href="mailto:gravesgids@gmail.com">gravesgids@gmail.com</a></span>
+  <span>Lotgenoten: <a href="https://www.facebook.com/groups/graveslotgenoten/">onze Facebookgroep</a></span>
+  <span>Meer over Graves: <a href="https://www.ziektevangraves-basedow.nl">ziektevangraves-basedow.nl</a></span>
 </footer>
 </body>
 </html>
